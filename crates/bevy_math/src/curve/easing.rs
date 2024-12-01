@@ -421,7 +421,14 @@ mod easing_functions {
 }
 
 impl EaseFunction {
-    fn eval(&self, t: f32) -> f32 {
+    /// Evaluate the easing function at time `t`
+    ///
+    /// # Arguments
+    /// * `t` - The time parameter between 0 and 1
+    ///
+    /// # Returns
+    /// The interpolated value between 0 and 1
+    pub fn eval(&self, t: f32) -> f32 {
         match self {
             EaseFunction::Linear => easing_functions::linear(t),
             EaseFunction::QuadraticIn => easing_functions::quadratic_in(t),
